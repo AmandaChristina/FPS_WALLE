@@ -9,6 +9,8 @@ TagManager:
   - RecuperaBateria
   - CartaoAcesso
   - Eletrico
+  - Tiro1
+  - Spawn
   layers:
   - Default
   - TransparentFX

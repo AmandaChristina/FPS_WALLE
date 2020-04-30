@@ -29,4 +29,10 @@ public class Vida : MonoBehaviour
       vida = Mathf.Clamp(vida, 0, maxVida);
       
     }
+    public bool Morreu()
+    {
+        if (vida == 0) return true;
+        return false;
+    }
+
 }

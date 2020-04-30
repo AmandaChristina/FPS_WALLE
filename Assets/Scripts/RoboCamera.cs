@@ -6,26 +6,46 @@ public class RoboCamera : MonoBehaviour
 {
     public float grau;
     public GameObject jogador;
+    public GameObject tiroPrefab;
+    public Transform spawnTiro;
     public float alcance;
+    public float vel;
+    bool encontrou;
+    float rotacaoInicial;
+    Vida vidaRobo;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
-        
+        vidaRobo = GetComponent<Vida>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.rotation = Quaternion.AngleAxis(grau* Time.time, Vector3.up);
-        print(transform.eulerAngles.y);
-        if (transform.eulerAngles.y < 180f)
-        {
-            grau *= -1;
+        if (vidaRobo.Morreu()) return;
 
+        if (!encontrou)
+        {
+            vel = 1;
+
+            Vector3 projecaoPlano = Vector3.ProjectOnPlane(transform.forward, Vector3.up);
+            Quaternion rotacaoNormal = Quaternion.LookRotation(projecaoPlano);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotacaoNormal, grau * Time.deltaTime);
+            transform.Rotate(0, 60 * Time.deltaTime, 0);
         }
 
+        if (encontrou)
+        {
+            Quaternion jog = Quaternion.LookRotation(jogador.transform.position - transform.position);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, jog, 90 * Time.deltaTime);
 
+            vel = 10f;
+            GameObject copiaTiro = Instantiate(tiroPrefab, spawnTiro.position, spawnTiro.rotation);
+            copiaTiro.GetComponent<Rigidbody>().AddForce(transform.forward * 500f);
+            Destroy(copiaTiro, 3f);
+        }
 
         //Alcance
         Vector3 alvo = jogador.transform.position - transform.position;
@@ -34,10 +54,12 @@ public class RoboCamera : MonoBehaviour
         RaycastHit hit;
 
 
-        if(Physics.Raycast(raio, out hit, alcance))
+        if (Physics.Raycast(raio, out hit, alcance))
         {
-            transform.rotation = Quaternion.LookRotation(Time.deltaTime * jogador.transform.forward * -1);
+            if (hit.transform == jogador.transform) {
+                if (Vector3.Angle(alvo, transform.forward) < 45) encontrou = true;
+            }
         }
-        
+
     }
 }

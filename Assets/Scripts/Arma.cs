@@ -52,20 +52,13 @@ public class Arma : MonoBehaviour
     }
 
     void TiroEVA(){
-        if (player.bateria > 0)
-        {
-            // Vector2 posicaoMira = new Vector2(Screen.width/2 , Screen.height / 2);
-            //Ray alvo = Camera.main.ScreenPointToRay(posicaoMira);
-            GameObject copiaTiro = Instantiate(tiro, tiroCordenada.position, tiroCordenada.rotation);
-            copiaTiro.GetComponent<Rigidbody>().AddForce(tiroCordenada.forward * 500f);
-            player.Bateria(consumoBateria);
-            Destroy(copiaTiro, 3);
-        }
-        else print("sem bateria!!");
+        
+        //else print("sem bateria!!");
     }
 
     void RayCastArma(){
 
+        // Vector2 posicaoMira = new Vector2(Screen.width/2 , Screen.height / 2);
         Ray alvo = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitalvo;
         Debug.DrawRay(alvo.origin, alvo.direction * alcance);
@@ -79,6 +72,17 @@ public class Arma : MonoBehaviour
             {
                 vidaAlvo.AtualizaVida(poderDeFogo);
             }
+        }
+
+        if (player.bateria > 0)
+        {
+
+            // GameObject copiaTiro = Instantiate(tiro, tiroCordenada.position, tiroCordenada.rotation);
+            //copiaTiro.GetComponent<Rigidbody>().AddForce(tiroCordenada.forward * 500f);
+            GameObject copiaTiro = GameObject.Instantiate(tiro, tiroCordenada.position, tiroCordenada.rotation) as GameObject;
+            tiro.GetComponent<TiroBehavior>().setTarget(hitalvo.point);
+            player.Bateria(consumoBateria);
+            Destroy(copiaTiro, 3);
         }
     }
 

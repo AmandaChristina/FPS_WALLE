@@ -41,7 +41,7 @@ public class RoboCamera : MonoBehaviour
             Quaternion jog = Quaternion.LookRotation(jogador.transform.position - transform.position);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, jog, 90 * Time.deltaTime);
 
-            vel = 10f;
+            //vel = 10f;
             GameObject copiaTiro = Instantiate(tiroPrefab, spawnTiro.position, spawnTiro.rotation);
             copiaTiro.GetComponent<Rigidbody>().AddForce(transform.forward * 500f);
             Destroy(copiaTiro, 3f);

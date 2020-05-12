@@ -66,7 +66,8 @@ public class Jogador : MonoBehaviour
     {
        if (other.gameObject.tag == "Tiro1")
         {
-            GetComponent<Vida>().AtualizaVida(-0.5f);
+            //VIDA
+           GetComponent<Vida>().AtualizaVida(-0.05f);
         } 
 
        if(other.gameObject.tag == "Respawn")

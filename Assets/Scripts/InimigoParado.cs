@@ -81,8 +81,8 @@ public class InimigoParado : MonoBehaviour
 
             if (hit.transform == jogador.transform)
             {
-                if (Vector3.Angle(alvo, transform.forward) < 45) encontrou = true;
-                //encontrou = true;
+                //if (Vector3.Angle(alvo, transform.forward) < 45) encontrou = true;
+                encontrou = true;
             }    
         }
 

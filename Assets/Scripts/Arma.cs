@@ -80,9 +80,9 @@ public class Arma : MonoBehaviour
             // GameObject copiaTiro = Instantiate(tiro, tiroCordenada.position, tiroCordenada.rotation);
             //copiaTiro.GetComponent<Rigidbody>().AddForce(tiroCordenada.forward * 500f);
             GameObject copiaTiro = GameObject.Instantiate(tiro, tiroCordenada.position, tiroCordenada.rotation) as GameObject;
-            tiro.GetComponent<TiroBehavior>().setTarget(hitalvo.point);
+            copiaTiro.GetComponent<TiroBehavior>().setTarget(hitalvo.point);
             player.Bateria(consumoBateria);
-            Destroy(copiaTiro, 3);
+            GameObject.Destroy(copiaTiro, 1);
         }
     }
 

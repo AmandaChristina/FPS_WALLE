@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1183793664140461982}
   - component: {fileID: -6210441253049657648}
   m_Layer: 0
-  m_Name: shot_prefab
+  m_Name: TIRO_EVA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,7 +112,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.99010324, a: 1}
   m_Intensity: 2
   m_Range: 50
   m_SpotAngle: 30
@@ -175,5 +175,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   n_Target: {x: 0, y: 0, z: 0}
-  CollisionExplosion: {fileID: 0}
+  CollisionExplosion: {fileID: 1816693189813782929, guid: a2744870ca4b4f34b8612463e88de8a6,
+    type: 3}
   speed: 700

@@ -9,14 +9,7 @@ public class TiroBehavior : MonoBehaviour
     public Vector3 n_Target;
     public GameObject CollisionExplosion;
     public float speed;
-
-
-    void Start()
-    {
-        
-    }
-
-    
+ 
     void Update()
     {
         float step = speed + Time.deltaTime;

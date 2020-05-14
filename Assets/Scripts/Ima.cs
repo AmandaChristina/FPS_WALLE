@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class Ima : MonoBehaviour
 {
     Transform origem;
+    BoxCollider colisao;
     GameObject jogadorDirecao;
     CharacterController jogadorCC;
     Vida vidaIma;
@@ -20,6 +22,7 @@ public class Ima : MonoBehaviour
    
     void Start(){
         origem = gameObject.transform;
+        colisao = GetComponentInParent<BoxCollider>();
         jogadorDirecao = GameObject.Find("Player");
         jogadorCC = jogadorDirecao.GetComponent<CharacterController>();
         vidaIma = GetComponentInParent<Vida>();
@@ -32,15 +35,19 @@ public class Ima : MonoBehaviour
         //FALTA PEGAR O COMPONENTE DA FORMA CORRETA
         //vidaUI.transform.rotation = Quaternion.LookRotation(jogadorDirecao.transform.eulerAngles * Time.deltaTime);
 
+        //O imã só pode ser morto depois que o jogador for pego
+        if (!abduzido) colisao.enabled = false;
+        else colisao.enabled = true;
+
+        //Ima morto
         if(vidaIma.vida == 0) {
             jogadorCC.enabled = true;
             if (vidaIma.Morreu()) return; 
         }
 
-        
-
-        Vector3 direcao = jogadorDirecao.transform.position - origem.transform.position;
-        Ray raio = new Ray(origem.transform.position, direcao);
+        //RayCast
+        Vector3 direcao = jogadorDirecao.transform.position - origem.position;
+        Ray raio = new Ray(origem.position, direcao);
         RaycastHit hit;
         Debug.DrawRay(raio.origin, raio.direction * alcance);
         
@@ -57,8 +64,9 @@ public class Ima : MonoBehaviour
 
     }
 
+
     void Abduzido(){
-        
+        abduzido = true;
         jogadorCC.enabled = false;
         novaPosicaoJogador = Vector3.MoveTowards(jogadorDirecao.transform.position, transform.position, Time.deltaTime * 10);
         jogadorDirecao.transform.position = novaPosicaoJogador;

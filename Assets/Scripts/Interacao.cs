@@ -23,10 +23,11 @@ public class Interacao : MonoBehaviour
 
         //Aqui podemos buscar o método Acao()
         Interagivel seleciona = null;
-
+        Selecao feedback = null;
         if (Physics.Raycast(origem, out objeto, alcanceInteracao)) {
             //Quando o raycast atingir o ojeto, ele deve pegar os componentes abaixo;
             seleciona = objeto.transform.GetComponent<Interagivel>();
+            feedback = objeto.transform.GetComponent<Selecao>();
         }
 
         //Caso a variavel não for nula, usaremos os métodos que contém no script que pegamos
@@ -39,6 +40,8 @@ public class Interacao : MonoBehaviour
                 seleciona.Acao();
             }
         }
+
+        if (feedback != null) feedback.Selecionar();
         //caso não selecionemos nada interagível nenhum texto irá aparecer na tela
         else texto.text = "";
     }

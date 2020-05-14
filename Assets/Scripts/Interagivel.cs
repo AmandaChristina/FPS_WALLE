@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Interagivel : MonoBehaviour
 {
-    public GameObject armaPrefab;    
+    public GameObject armaPrefab;
 
-    public string descricao = "";
+    public string descricao;
 
     //Itens de recuperacao
     public Jogador jogadorInt;
@@ -43,7 +43,7 @@ public class Interagivel : MonoBehaviour
             //aqui é o bool que verifica se a arma está no inventário, assim que coletada ela se torna verdadeiro no inventário
             armaPrefab.GetComponent<Arma>().armaNoInventario = true;
             //Ativa o prefab
-            //armaPrefab.SetActive(true);
+            armaPrefab.SetActive(true);
             //E destroi o objeto
             Destroy(gameObject);
 

@@ -12,12 +12,12 @@ public class Inimigo2 : MonoBehaviour
     public Transform[] pontos;
     public GameObject tiroPrefab;
     GameObject jogador;
-    Transform spawn;
+    public Transform spawn;
     NavMeshAgent agente;
     Vida vidaInimigo;
     public int indice;
     float rate;
-    bool naMira;
+    public bool naMira;
     
 
     
@@ -25,31 +25,47 @@ public class Inimigo2 : MonoBehaviour
     {
         jogador = GameObject.Find("Player");
         agente = GetComponent<NavMeshAgent>();
-        spawn = GetComponentInChildren<Transform>();
+        //spawn = GetComponentInChildren<Transform>();
+        
+        //Vida
         vidaInimigo = GetComponent<Vida>();
-        //agente.SetDestination(pontos[indice].position);
+        if (gameObject.CompareTag("Inimigo3")) vidaInimigo = GetComponentInChildren<Vida>();
     }
 
     
     void Update()
     {
-        if (vidaInimigo.Morreu()) {
-            Destroy(gameObject, 3f);
-            return; 
+        if (vidaInimigo.Morreu())
+        {
+            Destroy(gameObject, 1f);
+            return;
         }
 
         RaycastMetod();
 
-        //Máquina de Estados
-        if (!naMira) Patrulheiro();
-        else Perseguidor();
+        if (transform.CompareTag("Inimigo2")) {
+            
+            //Máquina de Estados
+            if (!naMira) Patrulheiro();
+            else Perseguidor();
+        }
+
+        if (transform.CompareTag("Inimigo3"))
+        {
+            //Máquina de Estados
+            if (!naMira) Patrulheiro();
+            else Perseguidor();
+        }
+
     }
 
     void Perseguidor(){
-
+        Atirador();
         Quaternion alvoRot = Quaternion.LookRotation(jogador.transform.position - transform.position);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, alvoRot, 180 * Time.deltaTime);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, alvoRot, 340 * Time.deltaTime);
         agente.SetDestination(jogador.transform.position);
+        
+        print("Mata o cara!!!");
     }
     void Patrulheiro(){
         if (agente.remainingDistance < 1f)
@@ -63,7 +79,6 @@ public class Inimigo2 : MonoBehaviour
     {
         if (rate < Time.time)
         {
-
             rate = Time.time + 0.1f;
 
             GameObject tiroCopia = Instantiate(tiroPrefab, spawn.position, spawn.rotation);
@@ -79,13 +94,18 @@ public class Inimigo2 : MonoBehaviour
         Debug.DrawRay(raio.origin, raio.direction * alcance, Color.red);
         RaycastHit hit;
         naMira = false;
-        //print("Área Limpa!!");
+        print("Área Limpa!!");
 
         if (Physics.Raycast(raio, out hit, alcance))
         {
+
             naMira = true;
-            Atirador();
-            //print("Mata o cara!!");
         }
+    }
+
+    void Dash()
+    {
+        //transform.position = jogador.transform.position;
+        print("Madeiraaaa!!!!");
     }
 }

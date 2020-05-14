@@ -11,6 +11,8 @@ TagManager:
   - Eletrico
   - Tiro1
   - Spawn
+  - Inimigo2
+  - Inimigo3
   layers:
   - Default
   - TransparentFX

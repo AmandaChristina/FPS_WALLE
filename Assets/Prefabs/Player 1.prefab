@@ -15,7 +15,7 @@ MonoBehaviour:
   armaNoInventario: 0
   mira: {fileID: 0}
   cursorUI: {fileID: 0}
-  tiro: {fileID: 4324079293781006714, guid: 1803722cb40ef7545b516a58975c70bc, type: 3}
+  tiro: {fileID: 1183793664146832690, guid: b7b11e4deff45fd459a0ec915af0879b, type: 3}
   tiroCordenada: {fileID: 6247344752297338675}
   alcance: 10
   poderDeFogo: -50
@@ -32,14 +32,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7020f69a3cc66264aae1025f34104a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armaNoInventario: 1
+  armaNoInventario: 0
   mira: {fileID: 0}
   cursorUI: {fileID: 0}
-  tiro: {fileID: 2110408867493748278, guid: e5f9d6f407317d944a01c089602080d7, type: 3}
+  tiro: {fileID: 1183793664146832690, guid: e74c1ea4c0df16749bb7aead554662ee, type: 3}
   tiroCordenada: {fileID: 6247344752811616285}
   alcance: 10
   poderDeFogo: -0.5
-  consumoBateria: -0.5
+  consumoBateria: -0.05
 --- !u!1 &6247344752297338672
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,7 +131,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7281678564331384189}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 184.39, y: 1, z: 8.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

@@ -68,14 +68,24 @@ public class Jogador : MonoBehaviour
         {
             //VIDA
            GetComponent<Vida>().AtualizaVida(-0.05f);
-        } 
+        }
 
-       if(other.gameObject.tag == "Respawn")
+        if (other.gameObject.tag == "Respawn")
         {
             rot = transform.rotation;
             posicao = transform.position;
         }
        
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Inimigo3")
+        {
+            //VIDA
+            GetComponent<Vida>().AtualizaVida(-10f);
+
+        }
     }
 
     IEnumerator Checkpoint()

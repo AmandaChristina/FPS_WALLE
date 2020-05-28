@@ -28,6 +28,7 @@ public class DanoContinuo : MonoBehaviour
 
         if (interpolacao)  GetComponent<Interpolacao>().enabled = true;
     }
+    
 
    
 }

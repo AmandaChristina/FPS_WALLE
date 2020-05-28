@@ -5,6 +5,7 @@ using UnityEngine;
 public class Interpolacao : MonoBehaviour
 {
     public Vector3 posicaoFinal;
+    public float vel;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,7 @@ public class Interpolacao : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, posicaoFinal, Time.deltaTime * 4);
+        transform.position = Vector3.MoveTowards(transform.position, posicaoFinal, Time.deltaTime * vel);
+        
     }
 }

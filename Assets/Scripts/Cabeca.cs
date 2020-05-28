@@ -13,7 +13,7 @@ public class Cabeca : MonoBehaviour
         //nesse caso precisa ser separado pois só queremos controlar a cabeça e não o corpo, diferente da rotação horizontal;
 
         rotX -= Input.GetAxis("Mouse Y") * sensibilidadeHead.sensibilidadeMouse * Time.deltaTime;
-        rotX = Mathf.Clamp(rotX , -45f, 45f);
+        rotX = Mathf.Clamp(rotX , -70f, 70f);
         transform.localEulerAngles = rotX * Vector3.right;
         
     }

@@ -75,12 +75,12 @@ public class Interagivel : MonoBehaviour
             jogadorInt.temCartaoacesso = true;
             Destroy(gameObject);
         }
-        if(gameObject.name == "Portao")
+        if(gameObject.tag == "Portao")
         {
             DanoContinuo dano = GetComponent<DanoContinuo>();
             if (!dano.trancado) dano.interpolacao = true;
         }
-        if(gameObject.name == "AcessCard")
+        if(gameObject.tag == "AcessCard")
         {
             if(jogadorInt.temCartaoacesso)
             {

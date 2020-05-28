@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
+using UnityEngine.UI;
 
 public class AUTO : MonoBehaviour
 {
@@ -11,16 +13,26 @@ public class AUTO : MonoBehaviour
     public GameObject[] Monitores;
     public GameObject Inimigo;
     public GameObject SpawnObjetos;
+    public GameObject alvoAuto;
+    public Slider VidaUI;
 
-    Vida vidaIma;
+    AUTO scriptAuto;
+    Vida autoVida;
+    Vida imaVida;
     GameObject Jogador;
 
-    public float ativaImacont;
     public float tempo;
+    int contadorMaquina = 0;
+    int imaContador = 0;
 
     void Start()
     {
         Jogador = GameObject.Find("Player");
+        autoVida = alvoAuto.GetComponent<Vida>();
+        scriptAuto = GetComponent<AUTO>();
+        VidaUI.enabled = true;
+        alvoAuto.SetActive(false);
+        
         
     }
 
@@ -51,28 +63,35 @@ public class AUTO : MonoBehaviour
 
 
 
-    void AtivaIma()
+    
+    void Stun()
     {
+        //if (GameObject.FindGameObjectWithTag("Inimigo3") == null &&
+        //    GameObject.FindGameObjectWithTag("Inimigo2") == null)
+        //{
+        //    Inimigo.SetActive(false);
+        //}
+        //if (GameObject.FindGameObjectWithTag("Objeto") == null)
+        //{
+        //    SpawnObjetos.SetActive(false);
+        //}
 
-        Ima imaPonta = Imas[0].GetComponentInChildren<Ima>();
-        Vida imaVida = Imas[0].GetComponent<Vida>();
-        CharacterController jogadorCC = Jogador.GetComponent<CharacterController>();
-
-
-        imaPonta.enabled = true;
-        if (imaVida.vida == 0) {
-
-            if (jogadorCC.enabled == true)
-            {
-                imaPonta.enabled = false; 
-            }
-            imaVida.AtualizaVida(imaVida.maxVida);
+        if (tempo < 5f)
+        {
+            tempo += Time.deltaTime;
+            alvoAuto.SetActive(true);
+        }
+        else {
+            tempo = 0;
+            alvoAuto.SetActive(false);
+            print("já saiu da condição");
             TrocaEstado(Estados.SPAWNINIMIGO);
         }
-    }
 
+    }
     void SpawnInimigo()
     {
+        
         Inimigo.SetActive(true);
         
         if (GameObject.FindGameObjectWithTag("Inimigo3") == null &&
@@ -95,21 +114,32 @@ public class AUTO : MonoBehaviour
             TrocaEstado(Estados.ATIVAIMA);
         }
     }
-
-    void Stun()
+    void AtivaIma()
     {
-        if (tempo < 16f)
+        if(imaContador > 1 )
         {
-            tempo += Time.deltaTime;
-
+            imaContador = 0;
         }
+        Ima imaPonta = imaPonta = Imas[imaContador].GetComponentInChildren<Ima>();
 
-        else if (tempo > 15f)
+        CharacterController jogadorCC = Jogador.GetComponent<CharacterController>();
+        imaVida = Imas[imaContador].GetComponent<Vida>();
+
+        imaPonta.enabled = true;
+
+        if (imaVida.vida == 0)
         {
-            
+
+            if (jogadorCC.enabled == true)
+            {
+                imaPonta.enabled = false;
+                imaContador++;
+            }
+            imaVida.AtualizaVida(imaVida.maxVida);
             TrocaEstado(Estados.SPAWNINIMIGO);
         }
     }
+
 
     void TrocaEstado(Estados proximo)
     {
@@ -119,10 +149,18 @@ public class AUTO : MonoBehaviour
 
     void VerificaVidaMonitor()
     {
-        Vida vidaMonitor = Monitores[0].GetComponent<Vida>();
+        Vida vidaMonitor = Monitores[contadorMaquina].GetComponent<Vida>();
         if (vidaMonitor.vida == 0) {
 
+            
+            contadorMaquina++;
             TrocaEstado(Estados.STUN);
+            
+        }
+
+        if (autoVida.vida == 0) {
+
+            scriptAuto.enabled = false; 
         }
     }
     

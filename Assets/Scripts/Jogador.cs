@@ -68,7 +68,16 @@ public class Jogador : MonoBehaviour
         {
             //VIDA
            GetComponent<Vida>().AtualizaVida(-0.05f);
+            Destroy(other.gameObject);
         }
+
+        if (other.gameObject.tag == "Objeto")
+        {
+            //VIDA
+            GetComponent<Vida>().AtualizaVida(-50f);
+            //Destroy(other.gameObject);
+        }
+
 
         if (other.gameObject.tag == "Respawn")
         {

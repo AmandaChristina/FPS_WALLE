@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class AUTO : MonoBehaviour
 {
@@ -169,7 +170,9 @@ public class AUTO : MonoBehaviour
 
         if (autoVida.vida == 0) {
 
-            scriptAuto.enabled = false; 
+            scriptAuto.enabled = false;
+            SceneManager.LoadScene("Vitoria");
+
         }
     }
 

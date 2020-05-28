@@ -3041,7 +3041,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1888436741492280, guid: cd0f18d8f0c53a14ab401ebd0214a4e2, type: 3}
       propertyPath: m_Name
-      value: LampadaR
+      value: PowerCore_01_snaps002 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4673221661428388, guid: cd0f18d8f0c53a14ab401ebd0214a4e2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3482,7 +3482,7 @@ PrefabInstance:
     - target: {fileID: 6247344752290981174, guid: d84e9c3460ea36d4192a50fc649112ac,
         type: 3}
       propertyPath: armaNoInventario
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6247344752290981174, guid: d84e9c3460ea36d4192a50fc649112ac,
         type: 3}
@@ -3507,7 +3507,7 @@ PrefabInstance:
     - target: {fileID: 6247344752371461508, guid: d84e9c3460ea36d4192a50fc649112ac,
         type: 3}
       propertyPath: armaNoInventario
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7281678564331384138, guid: d84e9c3460ea36d4192a50fc649112ac,
         type: 3}
@@ -3532,17 +3532,17 @@ PrefabInstance:
     - target: {fileID: 7281678564331384177, guid: d84e9c3460ea36d4192a50fc649112ac,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 558.8
+      value: 560.1
       objectReference: {fileID: 0}
     - target: {fileID: 7281678564331384177, guid: d84e9c3460ea36d4192a50fc649112ac,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.79
+      value: 116.5
       objectReference: {fileID: 0}
     - target: {fileID: 7281678564331384177, guid: d84e9c3460ea36d4192a50fc649112ac,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -102.04
+      value: -177.51418
       objectReference: {fileID: 0}
     - target: {fileID: 7281678564331384177, guid: d84e9c3460ea36d4192a50fc649112ac,
         type: 3}
@@ -3889,7 +3889,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1299841317655722, guid: cfcae8fd1d4ebf64fbdfecf57e5160a7, type: 3}
       propertyPath: m_Name
-      value: BarrelR
+      value: Barrel_04_snaps002
       objectReference: {fileID: 0}
     - target: {fileID: 4984916694711868, guid: cfcae8fd1d4ebf64fbdfecf57e5160a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4555,7 +4555,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1299841317655722, guid: cfcae8fd1d4ebf64fbdfecf57e5160a7, type: 3}
       propertyPath: m_Name
-      value: BarrelL
+      value: Barrel_04_snaps002 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4984916694711868, guid: cfcae8fd1d4ebf64fbdfecf57e5160a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5069,7 +5069,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1888436741492280, guid: cd0f18d8f0c53a14ab401ebd0214a4e2, type: 3}
       propertyPath: m_Name
-      value: LampadaL
+      value: PowerCore_01_snaps002
       objectReference: {fileID: 0}
     - target: {fileID: 4673221661428388, guid: cd0f18d8f0c53a14ab401ebd0214a4e2, type: 3}
       propertyPath: m_LocalPosition.x

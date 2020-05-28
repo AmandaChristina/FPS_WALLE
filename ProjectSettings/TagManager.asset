@@ -13,6 +13,8 @@ TagManager:
   - Spawn
   - Inimigo2
   - Inimigo3
+  - SpawnInimigosTag
+  - Objeto
   layers:
   - Default
   - TransparentFX

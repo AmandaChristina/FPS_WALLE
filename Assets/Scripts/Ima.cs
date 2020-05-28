@@ -51,8 +51,7 @@ public class Ima : MonoBehaviour
         RaycastHit hit;
         Debug.DrawRay(raio.origin, raio.direction * alcance);
         
-        print(" ");
-
+        
         if(Physics.Raycast(raio, out hit, alcance))
         {
             if (hit.transform.name == "Player")
@@ -70,6 +69,5 @@ public class Ima : MonoBehaviour
         jogadorCC.enabled = false;
         novaPosicaoJogador = Vector3.MoveTowards(jogadorDirecao.transform.position, transform.position, Time.deltaTime * 10);
         jogadorDirecao.transform.position = novaPosicaoJogador;
-        print("Jogador!!!");
     }
 }

@@ -9,9 +9,10 @@ public class Interagivel : MonoBehaviour
     public string descricao;
 
     //Itens de recuperacao
-    public Jogador jogadorInt;
+     Jogador jogadorInt;
+    GameObject jogador;
 
-    public Vida vidaRecupera;
+    Vida vidaRecupera;
     public bool itemEspecial;
     public float recuperaVida;
     public float aumentaVida;
@@ -23,7 +24,9 @@ public class Interagivel : MonoBehaviour
 
     void Start()
     {
-        
+        jogador = GameObject.Find("Player");
+        jogadorInt = jogador.GetComponent<Jogador>();
+        vidaRecupera = jogador.GetComponent<Vida>();
     }
 
    

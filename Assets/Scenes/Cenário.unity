@@ -15389,8 +15389,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armaPrefab: {fileID: 0}
   descricao: Trancado
-  jogadorInt: {fileID: 3728627413846447195}
-  vidaRecupera: {fileID: 0}
   itemEspecial: 0
   recuperaVida: 0
   aumentaVida: 0
@@ -21243,8 +21241,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armaPrefab: {fileID: 0}
   descricao: "Necessita de um Cart\xE3o"
-  jogadorInt: {fileID: 3728627413846447195}
-  vidaRecupera: {fileID: 0}
   itemEspecial: 0
   recuperaVida: 0
   aumentaVida: 0
@@ -25221,8 +25217,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armaPrefab: {fileID: 0}
   descricao: "Necessita de um Cart\xE3o"
-  jogadorInt: {fileID: 3728627413846447195}
-  vidaRecupera: {fileID: 0}
   itemEspecial: 0
   recuperaVida: 0
   aumentaVida: 0

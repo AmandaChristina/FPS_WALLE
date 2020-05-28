@@ -608,7 +608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barraVida: {fileID: 1348176656}
-  maxVida: 30
+  maxVida: 20
   vida: 0
 --- !u!114 &3763159583039385304
 MonoBehaviour:

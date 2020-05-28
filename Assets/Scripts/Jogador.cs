@@ -54,7 +54,7 @@ public class Jogador : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.tag == "Eletrico")
+        if(other.tag == "Portao")
         {
              
             DanoContinuo dano = other.GetComponent<DanoContinuo>();

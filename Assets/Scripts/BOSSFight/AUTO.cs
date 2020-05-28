@@ -16,6 +16,9 @@ public class AUTO : MonoBehaviour
     public GameObject alvoAuto;
     public Slider VidaUI;
 
+    public Transform posicao1;
+    public Transform posicao2;
+
     AUTO scriptAuto;
     Vida autoVida;
     Vida imaVida;
@@ -149,6 +152,12 @@ public class AUTO : MonoBehaviour
 
     void VerificaVidaMonitor()
     {
+        if(contadorMaquina >= Monitores.Length)
+        {
+            alvoAuto.SetActive(true);
+            MovimentaBOSS();
+        }
+
         Vida vidaMonitor = Monitores[contadorMaquina].GetComponent<Vida>();
         if (vidaMonitor.vida == 0) {
 
@@ -162,6 +171,18 @@ public class AUTO : MonoBehaviour
 
             scriptAuto.enabled = false; 
         }
+    }
+
+    void MovimentaBOSS()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, posicao1.position, 2f);
+
+        if(transform.position == posicao1.position)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, posicao2.position, 2f);
+        }
+
+
     }
     
 }

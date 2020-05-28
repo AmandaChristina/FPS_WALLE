@@ -67,7 +67,7 @@ public class Jogador : MonoBehaviour
        if (other.gameObject.tag == "Tiro1")
         {
             //VIDA
-           GetComponent<Vida>().AtualizaVida(-0.05f);
+           GetComponent<Vida>().AtualizaVida(-0.5f);
             Destroy(other.gameObject);
         }
 

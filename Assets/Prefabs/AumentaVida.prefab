@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3471300967226293846}
   - component: {fileID: 3471300967226293841}
   - component: {fileID: 3471300967226293840}
+  - component: {fileID: 2648154879693380451}
   m_Layer: 0
   m_Name: AumentaVida
   m_TagString: RecuperaVida
@@ -117,6 +118,18 @@ MonoBehaviour:
   aumentaVida: 10
   recuperaBateria: 50
   aumentaBateria: 0
+--- !u!114 &2648154879693380451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3471300967226293843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c8058c860b1fd4e80f496a1eafce18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4066317132666439039
 GameObject:
   m_ObjectHideFlags: 0

@@ -201,6 +201,7 @@ GameObject:
   - component: {fileID: 5961411947958203855}
   - component: {fileID: 5961411947958203824}
   - component: {fileID: 5961411947958203825}
+  - component: {fileID: 9199933066519152065}
   m_Layer: 0
   m_Name: AumentaBateria
   m_TagString: RecuperaBateria
@@ -306,6 +307,18 @@ MonoBehaviour:
   aumentaVida: 0
   recuperaBateria: 50
   aumentaBateria: 10
+--- !u!114 &9199933066519152065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5961411947958203826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c8058c860b1fd4e80f496a1eafce18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9016077057933808292
 GameObject:
   m_ObjectHideFlags: 0

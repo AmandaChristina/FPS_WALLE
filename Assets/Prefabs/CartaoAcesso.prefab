@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1352289538838888438}
   - component: {fileID: 1352289538838888433}
   - component: {fileID: 1352289538838888437}
+  - component: {fileID: 3596845525384064197}
   m_Layer: 0
   m_Name: CartaoAcesso
   m_TagString: CartaoAcesso
@@ -27,9 +28,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352289538838888432}
-  m_LocalRotation: {x: 0.047097757, y: -0.01855023, z: 0.016543439, w: 0.998581}
+  m_LocalRotation: {x: 0.047100835, y: -0.018550146, z: 0.016540678, w: 0.99858093}
   m_LocalPosition: {x: -7.424, y: 0.065, z: -6.247}
-  m_LocalScale: {x: 0.31211054, y: 0.044185784, z: 0.1774851}
+  m_LocalScale: {x: 0.50271654, y: 0.07117004, z: 0.28587526}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -60,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 24dca99fc265fc34d8c5f727718785d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -115,3 +116,15 @@ MonoBehaviour:
   aumentaVida: 0
   recuperaBateria: 0
   aumentaBateria: 0
+--- !u!114 &3596845525384064197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352289538838888432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c8058c860b1fd4e80f496a1eafce18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

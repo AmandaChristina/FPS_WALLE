@@ -25717,6 +25717,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7281678564580954009, guid: d84e9c3460ea36d4192a50fc649112ac,
+        type: 3}
+      propertyPath: far clip plane
+      value: 622.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d84e9c3460ea36d4192a50fc649112ac, type: 3}
 --- !u!4 &6247344751886317842 stripped

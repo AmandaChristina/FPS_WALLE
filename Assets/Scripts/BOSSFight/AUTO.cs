@@ -171,7 +171,7 @@ public class AUTO : MonoBehaviour
         if (autoVida.vida == 0) {
 
             scriptAuto.enabled = false;
-            SceneManager.LoadScene("Vitoria");
+            //SceneManager.LoadScene("Vitoria");
 
         }
     }
